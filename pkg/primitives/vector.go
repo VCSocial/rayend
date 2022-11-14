@@ -41,12 +41,24 @@ func (a Vec3) Div(b Vec3) Vec3 {
 	return Vec3{a.X / b.X, a.Y / b.Y, a.Z / b.Z}
 }
 
+func (a Vec3) Dot(b Vec3) float64 {
+	return (a.X * b.X) + (a.Y * b.Y) + (a.Z * b.Z)
+}
+
 func (v Vec3) LenSqr() float64 {
 	return (v.X * v.X) + (v.Y * v.Y) + (v.Z * v.Z)
 }
 
 func (v Vec3) Len() float64 {
 	return math.Sqrt(v.LenSqr())
+}
+
+func (v Vec3) AddScalar(s float64) Vec3 {
+	return Vec3{v.X + s, v.Y + s, v.Z + s}
+}
+
+func (v Vec3) SubScalar(s float64) Vec3 {
+	return Vec3{v.X - s, v.Y - s, v.Z - s}
 }
 
 func (v Vec3) ScaleAdd(s float64) Vec3 {
