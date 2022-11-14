@@ -9,7 +9,7 @@ import (
 
 func render() {
 	aspectRatio := 16.0 / 9.0
-	w := 400
+	w := 640
 	h := int64(float64(w) / aspectRatio)
 	fmt.Printf("P3\n%d %d\n255\n", w, h)
 
