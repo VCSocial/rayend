@@ -25,12 +25,11 @@ func (r Ray) Color() Color {
 	white := Vec3{1, 1, 1}.MulScalar(1.0 - t)
 	blue := Vec3{0.5, 0.7, 1}.MulScalar(t)
 
-	res := white.Add(blue)
-	return Color{res.X, res.Y, res.Z}
+	return white.Add(blue)
 }
 
 func (r Ray) HitSphere(center Point, radius float64) float64 {
-	oc := r.Origin.Sub(Vec3{center.X, center.Y, center.Z})
+	oc := r.Origin.Sub(center)
 	a := r.Direction.Dot(r.Direction)
 	b := oc.MulScalar(2.0).Dot(r.Direction)
 	c := oc.Dot(oc) - radius*radius

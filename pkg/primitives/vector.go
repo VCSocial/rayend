@@ -20,10 +20,8 @@ type Vec3 struct {
 	Z float64
 }
 
-type (
-	Point Vec3
-	Color Vec3
-)
+type Point = Vec3
+type Color = Vec3
 
 func (a Vec3) Sub(b Vec3) Vec3 {
 	return Vec3{a.X - b.X, a.Y - b.Y, a.Z - b.Z}
